@@ -1,3 +1,5 @@
+//Linked List Notes
+
 class LinkedList {
   constructor() {
       this.head = null;
