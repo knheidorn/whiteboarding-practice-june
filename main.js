@@ -52,3 +52,18 @@ function palindromeCheck(string) {
 
 // const string = "race  cart"
 // palindromeCheck(string)
+
+function containsDuplicates(array) {
+  let obj = {}
+  obj[array[0]] = 1
+  for (let i = 1; i < array.length; i++) {
+    if(obj[array[i]] !== undefined) {
+      return true
+    }
+    obj[array[i]] = 1
+  }
+  return false
+}
+
+// const array = [1, 3, 4, 1, 5]
+// containsDuplicates(array)
