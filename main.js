@@ -31,3 +31,24 @@ function palindromeCheck(string) {
   }
 
   let values = Object.values(obj)
+  if(newString.length % 2 === 0){
+   for (let i = 0; i < values.length; i++){
+     if(values[i] % 2 !== 0){
+       return false
+     }
+   }
+ } else {
+   let count = 0
+   for (let i = 0; i < values.length; i++) {
+     if(values[i] % 2 !== 0){
+       count++
+     }
+   } if (count > 1) {
+     return false
+   }
+ }
+ return true
+}
+
+// const string = "race  cart"
+// palindromeCheck(string)
