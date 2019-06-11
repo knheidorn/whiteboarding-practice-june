@@ -67,3 +67,14 @@ function containsDuplicates(array) {
 
 // const array = [1, 3, 4, 1, 5]
 // containsDuplicates(array)
+
+function precentTwentyArray(string) {
+  let newString = string.trim()
+  let array = newString.split("")
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === " "){
+      array[i]="%20"
+    }
+  }
+  return array.join("")
+}
