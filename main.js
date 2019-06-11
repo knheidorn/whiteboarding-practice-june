@@ -78,3 +78,22 @@ function precentTwentyArray(string) {
   }
   return array.join("")
 }
+
+// const string = "Mr John Smith    "
+// precentTwentyArray(string)
+
+function precentTwentyString(string) {
+  let newString = string.trim()
+  let answer = ""
+  for (let i = 0; i < newString.length; i++){
+    if (newString[i] === " "){
+      answer += "%20"
+    } else {
+      answer += newString[i]
+    }
+  }
+  return answer
+}
+
+// const string = "Mr John Smith    "
+// precentTwentyString(string)
