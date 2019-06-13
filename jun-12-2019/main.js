@@ -79,3 +79,20 @@ function likes(names) {
       return `${names.join(", ")} and ${remainder.length} others like this`
   }
 }
+
+function spinWords(sentence){
+  let answer = ""
+  let array = sentence.split(" ")
+
+  array.map(word => {
+    if (word.length >= 5) {
+      let reverseArray = word.split("")
+      let temp = reverseArray.reverse()
+      let reverse = temp.join("")
+      answer += `${reverse} `
+    } else {
+      answer += `${word} `
+    }
+  })
+
+  return answer.trim()
