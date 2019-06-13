@@ -96,3 +96,17 @@ function spinWords(sentence){
   })
 
   return answer.trim()
+}
+
+function getCount(str) {
+  var vowelsCount = 0;
+  let vowel = ["a", "e", "i", "o", "u"]
+
+  for (i = 0; i < str.length; i++){
+    if (vowel.includes(str[i])){
+      vowelsCount += 1
+    }
+  }
+
+  return vowelsCount;
+}
