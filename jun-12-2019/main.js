@@ -60,3 +60,22 @@ function isTriangle(a,b,c)
   }
   return true
 }
+
+function likes(names) {
+  let length = names.length
+
+  switch (length) {
+    case 0:
+      return "no one likes this";
+    case 1:
+      return `${names} likes this`;
+    case 2:
+      return `${names.join(" and ")} like this`
+    case 3:
+      let lastTwo = names.splice(Math.max(length - 2, 1))
+      return `${names}, ${lastTwo.join(" and ")} like this`
+    default:
+      let remainder = names.splice(Math.max(2, 1))
+      return `${names.join(", ")} and ${remainder.length} others like this`
+  }
+}
