@@ -16,12 +16,17 @@ class Node {
 function findDuplicates(list) {
   let current = list.head
   let seen = {}
-  while (current.next !== null) {
+
+  while (current) {
     seen[current.value] = true
     if (seen[current.next.value]){
-      let temp = current.next
-      current.next = temp.next
-      temp.next = null
+      if (current.next.next) {
+        let temp = current.next
+        current.next = temp.next
+        temp.next = null
+      } else {
+        current.next = null
+      }
     }
     current = current.next
   }
@@ -33,11 +38,23 @@ function reverseList(list) {
   let previous = null
 
   while (current) {
-    let temp = current.next.value
-    current.next.value = previous
-    let previous = current
-    current = temp
+    next = current.next
+    current.next = previous
+    previous = current
+    current = next
   }
-  list.head = previous
-  return list
+  return previous
 }
+
+let list = {
+    head: {
+        value: 12,
+        next: {
+            value: 99,
+            next: {
+                value: 37,
+                next: null
+            }
+        }
+    }
+};
