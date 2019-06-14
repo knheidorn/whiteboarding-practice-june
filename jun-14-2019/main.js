@@ -69,3 +69,53 @@ function reverseList(list) {
   let number = parseFloat(array.join(""))
   return number
 }
+
+function switchPairs(array) {
+  for (let i = 0; i < array.length; i += 2) {
+    let temp = array[i]
+    array[i] = array[i + 1]
+    array[i + 1] = temp
+  }
+  return array
+}
+
+function setList(index, value, list) {
+  let current = list.head
+  let count = 0
+
+  while (count < index) {
+    count++
+    current = current.next
+  }
+
+  current.value = value
+
+  return list
+}
+
+function toString(list) {
+  let current = list.head
+  let string = "[ "
+
+  while (current.next !== null) {
+    string += current.value + ", "
+    current = current.next
+  }
+
+  string += current.value + "]"
+
+  return string
+}
+
+function deleteLast(list) {
+  let current = list.head
+
+  while (current.next.next) {
+    current = current.next
+  }
+
+  let saved = current.next
+  current.next = null
+  console.log(list)
+  return saved.value
+}
