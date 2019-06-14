@@ -110,3 +110,41 @@ function getCount(str) {
 
   return vowelsCount;
 }
+
+function  closest(strng) {
+  let array = strng.split(" ")
+  let modifiedArray = []
+  let potentialAns = []
+  let objAns = {}
+
+  array.forEach (num => {
+    modifiedArray.push(parseFloat(num))
+  })
+
+
+  for (let i = 0; i < modifiedArray.length; i++) {
+    let sum = 0
+    let number = modifiedArray[i]
+
+    while (number) {
+      sum += number % 10
+      number = Math.floor(number / 10)
+    }
+    potentialAns.push([sum, i, modifiedArray[i]])
+  }
+
+  potentialAns.sort((a, b) => a[0] - b[0])
+  let ending = potentialAns.length - 1
+
+  for (let i = 0; i < ending; i++){
+    let start = potentialAns[i][0]
+    let next = potentialAns[i + 1][0]
+    let difference = next - start
+
+    if (objAns[difference] === undefined){
+      objAns[difference] = [potentialAns[i], potentialAns[i + 1]]
+    }
+  }
+  let answer = Object.values(objAns)[0]
+  return answer
+}
