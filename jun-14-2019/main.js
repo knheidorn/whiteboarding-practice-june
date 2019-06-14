@@ -139,3 +139,13 @@ function takeLower(list) {
 
   return item1
 }
+
+function writeChar(number) {
+  if (number === 1) {
+    return "*"
+  } else if (number === 2) {
+    return "**"
+  } else {
+    return "<" + writeChar(number - 2) + ">"
+  }
+}
