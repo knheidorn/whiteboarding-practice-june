@@ -116,6 +116,26 @@ function deleteLast(list) {
 
   let saved = current.next
   current.next = null
-  console.log(list)
   return saved.value
+}
+
+function takeLower(list) {
+  let item1 = this.head
+  let item2 = list.head
+
+  if (item1.data > item2.data) {
+    this.head = item2
+    list.head = item1
+  }
+  while(item1.next && item2.next) {
+    if (item1.next.data > item2.next.data){
+      let next = item1.next
+      item1.next = item2.next
+      item2.next = next
+    }
+    item1 = item1.next
+    item2 = item2.next
+  }
+
+  return item1
 }
