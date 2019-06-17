@@ -80,3 +80,15 @@ function reverse(list) {
   newList["head"] = previous
   return newList
 }
+
+function evenSum(list) {
+  let current = list.head
+  let answer = 0
+
+  while (current.next) {
+    answer = current.value + answer
+    current = current.next.next
+  }
+
+  return answer + current.value
+}
