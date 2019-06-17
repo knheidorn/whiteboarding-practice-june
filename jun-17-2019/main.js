@@ -22,3 +22,13 @@ function factorial(n) {
     return (n * factorial(n-1))
   }
 }
+
+function multiplyEvens(n) {
+  if (n <= 0) {
+    return "invalid"
+  } else if (n === 1) {
+    return 2
+  } else {
+    return (n * 2 * multiplyEven(n - 1))
+  }
+}
