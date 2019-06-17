@@ -54,3 +54,13 @@ function sumTo(n) {
     return (1/n + sumTo(n-1))
   }
 }
+
+function writeNums(n) {
+  if (n < 1) {
+    return "invalid"
+  } else if (n === 1){
+    return "1"
+  } else {
+    return writeNums(n -1) + ", " + n
+  }
+}
