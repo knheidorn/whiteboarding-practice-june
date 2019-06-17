@@ -64,3 +64,19 @@ function writeNums(n) {
     return writeNums(n -1) + ", " + n
   }
 }
+
+// linked list
+function reverse(list) {
+  let current = list.head
+  let previous = null
+  let newList = {}
+
+  while (current) {
+    let temp = current.next
+    current.next = previous
+    previous = current
+    current = temp
+  }
+  newList["head"] = previous
+  return newList
+}
