@@ -32,3 +32,13 @@ function multiplyEvens(n) {
     return (n * 2 * multiplyEven(n - 1))
   }
 }
+
+function starString(n) {
+  if (n === 0) {
+    return "*"
+  } else if (n === 1) {
+    return "**"
+  } else {
+    return starString(n - 1) + starString(n - 1)
+  }
+}
