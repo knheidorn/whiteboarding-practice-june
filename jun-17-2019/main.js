@@ -42,3 +42,15 @@ function starString(n) {
     return starString(n - 1) + starString(n - 1)
   }
 }
+
+function sumTo(n) {
+  if (n < 0) {
+    return "invalid"
+  } else if (n === 0) {
+    return 0
+  } else if (n === 1) {
+    return 1
+  } else {
+    return (1/n + sumTo(n-1))
+  }
+}
