@@ -92,3 +92,16 @@ function evenSum(list) {
 
   return answer + current.value
 }
+
+function switchPairs(list) {
+  let current = list.head
+  let previous = null
+
+  while (current.next) {
+    let temp = current.next
+    current.next = current
+    previous = temp
+    current = current.next.next
+  }
+  return previous
+}
