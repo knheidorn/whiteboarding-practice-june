@@ -50,3 +50,28 @@ function getNamesMap(array) {
   let names = array.map((animal) => animal.name)
   return names
 }
+
+/* reduce example
+1st is the for-loop version - next will be the reduce
+*/
+
+let orders = [
+  { amount: 250 },
+  { amount: 400 },
+  { amount: 100 },
+  { amount: 325 }
+]
+
+function sumNums(array) {
+  let total = 0
+
+  for(let i = 0; i < array.length; i++) {
+    total += array[i].amount
+  }
+}
+
+function sumNumsReduce(array) {
+  let total = array.reduce((sum, order) => {
+    return sum + order.amount
+  }, 0)
+}
