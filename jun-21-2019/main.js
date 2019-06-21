@@ -33,3 +33,20 @@ function filterAnimals(array) {
 
   return (dogs)
 }
+
+/*map examples - more functional programming
+1st is the for-loop version next will be the map
+*/
+function getNames(array) {
+  let names = []
+
+  for (let i = 0; i < array.length; i++) {
+    names.push(array[i].name)
+  }
+  return names
+}
+
+function getNamesMap(array) {
+  let names = array.map((animal) => animal.name)
+  return names
+}
