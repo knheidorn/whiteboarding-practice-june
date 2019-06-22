@@ -75,3 +75,55 @@ function sumNumsReduce(array) {
     return sum + order.amount
   }, 0)
 }
+
+/* more details on whiteboarding questions in general
+Specifically working on the twoSums problem - focusing on
+making sure that given an array and a target number
+it will check and give different returns
+
+main method to solve these is hashes!!
+*/
+/* this one returns the INDEX of the pairs
+also assumes that only ONE pair in the array MAX */
+
+function twoSums(nums, target) {
+  let hash = {}
+  let answer = []
+
+  for (let i = 0; i < nums.length; i++) {
+    let difference = target - nums[i]
+
+    if (hash[difference.toString()] !== undefined) {
+      let differenceIndex = hash[difference.toString()]
+      answer.push(differenceIndex, i)
+      return answer
+    }
+    hash[nums[i].toString()] = i
+  }
+
+  return false
+};
+
+/* this one returns the pairs
+may return more than one pair of sums */
+
+
+function twoSums(array, target) {
+  let hash = {}
+  let answer = []
+
+  for (let i = 0; i < array.length; i++) {
+    let difference = target - array[i]
+
+    if (hash[difference.toString()] !== undefined) {
+      answer.push(array[i], difference)
+    }
+    hash[array[i].toString()] =  i
+  }
+
+  if (answer.length !== 0) {
+    return answer
+  } else {
+    return false
+  }
+}
