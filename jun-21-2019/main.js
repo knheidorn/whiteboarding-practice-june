@@ -86,7 +86,7 @@ main method to solve these is hashes!!
 /* this one returns the INDEX of the pairs
 also assumes that only ONE pair in the array MAX */
 
-function twoSums(nums, target) {
+function twoSum(nums, target) {
   let hash = {}
   let answer = []
 
@@ -107,8 +107,7 @@ function twoSums(nums, target) {
 /* this one returns the pairs
 may return more than one pair of sums */
 
-
-function twoSums(array, target) {
+function twoSum(array, target) {
   let hash = {}
   let answer = []
 
